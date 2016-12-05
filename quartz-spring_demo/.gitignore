@@ -37,6 +37,8 @@ Temporary Items
 # IntelliJ
 /out/
 .idea
+/.idea
+/.idea/
 *.iml
 *.iws
 tomcatlogdir_*
