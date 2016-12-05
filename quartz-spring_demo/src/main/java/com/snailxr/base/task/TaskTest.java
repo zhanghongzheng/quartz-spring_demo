@@ -1,12 +1,11 @@
 package com.snailxr.base.task;
 
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
+
 import java.nio.charset.Charset;
 import java.util.Date;
 import java.util.Map;
-import java.util.Set;
-
-import org.apache.log4j.Logger;
-import org.springframework.stereotype.Component;
 
 @Component
 public class TaskTest {
@@ -14,14 +13,14 @@ public class TaskTest {
  
 	public void run() {
 		for (int i = 0; i < 1; i++) {
-			log.debug(i+" run......................................" + (new Date()));
+			log.info(i+" run......................................" + (new Date()));
 		}
 
 	}
 
 	public void run1() {
 		for (int i = 0; i < 1; i++) {
-			log.debug(i+" run1......................................" + (new Date()));
+			log.info(i+" run1......................................" + (new Date()));
 		}
 	}
 	

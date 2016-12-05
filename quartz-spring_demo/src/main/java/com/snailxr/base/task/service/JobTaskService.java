@@ -1,33 +1,21 @@
 package com.snailxr.base.task.service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
-
-import javax.annotation.PostConstruct;
-
+import com.snailxr.base.task.QuartzJobFactory;
+import com.snailxr.base.task.QuartzJobFactoryDisallowConcurrentExecution;
+import com.snailxr.base.task.dao.ScheduleJobMapper;
+import com.snailxr.base.task.domain.ScheduleJob;
 import org.apache.log4j.Logger;
-import org.quartz.CronScheduleBuilder;
-import org.quartz.CronTrigger;
-import org.quartz.JobBuilder;
-import org.quartz.JobDetail;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobKey;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
-import org.quartz.Trigger;
-import org.quartz.TriggerBuilder;
-import org.quartz.TriggerKey;
+import org.quartz.*;
 import org.quartz.impl.matchers.GroupMatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.stereotype.Service;
 
-import com.snailxr.base.task.QuartzJobFactory;
-import com.snailxr.base.task.QuartzJobFactoryDisallowConcurrentExecution;
-import com.snailxr.base.task.dao.ScheduleJobMapper;
-import com.snailxr.base.task.domain.ScheduleJob;
+import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 /**
  * 
@@ -109,7 +97,7 @@ public class JobTaskService {
 	/**
 	 * 添加任务
 	 * 
-	 * @param scheduleJob
+	 * @param job
 	 * @throws SchedulerException
 	 */
 	public void addJob(ScheduleJob job) throws SchedulerException {
@@ -153,9 +141,9 @@ public class JobTaskService {
 
 		Scheduler scheduler = schedulerFactoryBean.getScheduler();
 
-		// 这里获取任务信息数据
+//		 这里获取任务信息数据
 		List<ScheduleJob> jobList = scheduleJobMapper.getAll();
-	
+
 		for (ScheduleJob job : jobList) {
 			addJob(job);
 		}

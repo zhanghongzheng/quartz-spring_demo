@@ -1,8 +1,8 @@
 package com.snailxr.base.task.dao;
 
-import java.util.List;
-
 import com.snailxr.base.task.domain.ScheduleJob;
+
+import java.util.List;
 
 public interface ScheduleJobMapper {
 	int deleteByPrimaryKey(Long jobId);

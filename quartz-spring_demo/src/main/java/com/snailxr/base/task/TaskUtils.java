@@ -1,13 +1,12 @@
 package com.snailxr.base.task;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
+import com.snailxr.base.support.spring.SpringUtils;
+import com.snailxr.base.task.domain.ScheduleJob;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import com.snailxr.base.support.spring.SpringUtils;
-import com.snailxr.base.task.domain.ScheduleJob;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class TaskUtils {
 	public final static Logger log = Logger.getLogger(TaskUtils.class);

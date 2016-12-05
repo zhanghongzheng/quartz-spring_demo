@@ -1,10 +1,9 @@
 package com.snailxr.base.task.controller;
 
-import java.lang.reflect.Method;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.snailxr.base.support.RetObj;
+import com.snailxr.base.support.spring.SpringUtils;
+import com.snailxr.base.task.domain.ScheduleJob;
+import com.snailxr.base.task.service.JobTaskService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.quartz.CronScheduleBuilder;
@@ -14,10 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.snailxr.base.support.RetObj;
-import com.snailxr.base.support.spring.SpringUtils;
-import com.snailxr.base.task.domain.ScheduleJob;
-import com.snailxr.base.task.service.JobTaskService;
+import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.Method;
+import java.util.List;
 
 @Controller
 @RequestMapping("/task")
