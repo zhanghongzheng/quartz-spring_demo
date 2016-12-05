@@ -39,6 +39,7 @@ Temporary Items
 .idea
 /.idea
 /.idea/
+.idea/
 *.iml
 *.iws
 tomcatlogdir_*
